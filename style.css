@@ -33,6 +33,7 @@ body {
   top: 0;
   left: 0;
   transition: opacity 1s ease-in-out;
+  object-position: center top; /* Align image from top */
 }
 
 .slide.active {
@@ -218,6 +219,7 @@ input#attending-no:checked + label.heart {
     width: 100vw;
     height: 70vh;
     object-fit: cover;
+    object-position: center -150px;
   }
 }
 
@@ -264,7 +266,7 @@ body {
 body::before {
   content: "";
   display: block;
-  height: 85vh; /* Same height as hero */
+  height: 75vh; /* Same height as hero */
 }
 
 @keyframes fadeIn {
@@ -355,7 +357,7 @@ body::before {
 
 .scroll-indicator {
   position: absolute;
-  top: 80vh;
+  top: 70vh;
   left: 0;
   width: 100%;
   display: flex;
