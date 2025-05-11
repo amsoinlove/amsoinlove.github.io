@@ -241,7 +241,7 @@ input#attending-no:checked + label.heart {
   width: 100%;
   background: linear-gradient(to bottom, 
   rgba(255, 255, 255, 1) 0%, 
-  rgba(255, 255, 255, 0.4) 20%, 
+  rgba(255, 255, 255, 0.2) 20%,
   rgba(255, 255, 255, 0) 100%);
   z-index: 2; /* must be above the image, but below the text */
   pointer-events: none;
@@ -295,7 +295,7 @@ body::before {
 
 .hero .hashtag {
   position: absolute;
-  top: 3vh;
+  top: 1vh;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
