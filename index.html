@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RSVP – Sonali & Amar's Wedding</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Londrina+Shadow&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">  
+</head>
+<body>
+  <div id="splash-screen">
+    <div class="splash-content">
+      <img src="photos/logo.png" alt="Wedding Logo" class="splash-logo">
+      <h1>Sonali & Amar</h1>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="carousel">
+      <div class="slides">
+        <img src="photos/photo1.jpg" class="slide active" />
+      </div>
+    </div>
+    <h1 class="hashtag">#AmSoInLove</h1>
+  </section>
+
+  <!-- Scroll Arrow -->
+  <div class="scroll-indicator">
+    <div class="scroll-wrapper">
+      <div class="scroll-text">Scroll down to RSVP</div>
+      <img src="photos/arrow.png" alt="Scroll down arrow" />
+    </div>
+  </div>
+  
+  <!-- RSVP Form -->
+  <div class="container">
+    <h1>Sonali & Amar</h1>
+    <p>You're invited to our wedding! 💍 Please let us know if you can join us.</p>
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required />
+
+      <label>Will you attend?</label>
+      <div class="heart-selection">
+        <div class="heart-option">
+          <input type="radio" name="attending" id="attending-yes" value="Yes" checked>
+          <label for="attending-yes" class="heart"></label>
+          <div class="heart-caption">We’ll be there! 🎉</div>
+        </div>
+
+        <div class="heart-option">
+          <input type="radio" name="attending" id="attending-no" value="No">
+          <label for="attending-no" class="heart"></label>
+          <div class="heart-caption">Can’t make it 😢</div>
+        </div>
+      </div>
+
+      <label for="arrival-date">When will you arrive?</label>
+      <select id="arrival-date" name="arrivalDate" required>
+        <option value="">-- Select a date --</option>
+        <option value="October 31st">May 31</option>
+        <option value="November 1st (before Haldi)">June 1</option>
+        <option value="November 1st (before Sangeet)">June 1</option>
+        <option value="Novenber 2nd">June 2</option>
+      </select>
+
+      <label for="message">Any message or dietary preferences?</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <button type="submit">Send RSVP</button>
+    </form>
+  </div>
+
+  <!-- Itinerary Section -->
+  <div class="container" id="itinerary">
+    <h1>Wedding Itinerary</h1>
+    <p class="itinerary-date">Frid, 31st Oct 2025 - Sun, 2nd Nov 2025</p>
+    <div class="timeline">
+
+      <div class="timeline-item left">
+        <div class="content">
+          <h2>Mehendi</h2>
+          <p>31st October<br>6:00 PM<br>Outdoor Restaurant</p>
+        </div>
+        <div class="icon"><img src="photos/mehendi.png" alt="Mehendi"></div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="icon"><img src="photos/haldi.png" alt="Haldi"></div>
+        <div class="content">
+          <h2>Haldi</h2>
+          <p>1st November<br>11:00 PM<br>Poolside</p>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="content">
+          <h2>Sangeet & Cocktail</h2>
+          <p>1st November<br>7:00 PM<br>Outdoor Lawn</p>
+        </div>
+        <div class="icon"><img src="photos/sangeet.png" alt="Sangeet"></div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="icon"><img src="photos/wedding.png" alt="Wedding"></div>
+        <div class="content">
+          <h2>Wedding</h2>
+          <p>2nd November<br>12:00 PM<br>Riverside</p>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="content">
+          <h2>Lavan Phere</h2>
+          <p>2nd November<br>4:00 PM<br>Riverside</p>
+        </div>
+        <div class="icon"><img src="photos/phere.png" alt="Lavan Phere"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Venue Section -->
+  <div class="container" id="venue">
+    <h1>Venue</h1>
+    <p>Join us at the beautiful <strong>Wood Castle Spa & Resort</strong>, nestled in the scenic hills of Jim Corbett for a celebration full of love and laughter.</p>
+
+    <!-- Pin and Directions -->
+    <div class="venue-details">
+      📍 <strong>Wood Castle Spa & Resort</strong><br/>
+      <a href="https://maps.app.goo.gl/h7FvZXuypj874zqo6" target="_blank" class="map-link">
+        Open in Google Maps →
+      </a>
+    </div>
+
+    <!-- Embedded Map -->
+    <div class="map-container">
+      <iframe
+        width="100%"
+        height="300"
+        frameborder="0"
+        style="border:0"
+        src="https://www.google.com/maps?q=Wood+Castle+Spa+%26+Resort,+29.472391252245462,79.1498273288603&z=17&output=embed"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+
+
+  <!-- Background Music -->
+  <audio autoplay loop id="bgMusic">
+    <source src="music/wedding-song.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
