@@ -264,7 +264,7 @@ body {
 body::before {
   content: "";
   display: block;
-  height: 91vh; /* Same height as hero */
+  height: 85vh; /* Same height as hero */
 }
 
 @keyframes fadeIn {
@@ -355,7 +355,7 @@ body::before {
 
 .scroll-indicator {
   position: absolute;
-  top: 85vh;
+  top: 80vh;
   left: 0;
   width: 100%;
   display: flex;
