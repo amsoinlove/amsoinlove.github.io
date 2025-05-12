@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const containers = document.querySelectorAll('.container');
   const scrollIndicator = document.querySelector('.scroll-indicator');
 
-  // Set volume lower
-  music.volume = 0.2;
 
   // Start bouncing the form and venue containers
   containers.forEach(container => {
@@ -23,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0 });
 
     if (music) {
+      music.volume = 0.2;
       music.play().catch(err => {
         console.warn('Music playback blocked:', err);
       });
@@ -68,3 +67,4 @@ document.addEventListener('visibilitychange', () => {
     music?.play().catch(() => {});
   }
 });
+

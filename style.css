@@ -219,7 +219,7 @@ input#attending-no:checked + label.heart {
     width: 100vw;
     height: 70vh;
     object-fit: cover;
-    object-position: center -150px;
+    object-position: center -140px;
   }
 }
 
