@@ -85,15 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize on page load
     updateAttendanceFields();
   }
-
-  const rsvpForm = document.getElementById('rsvp-form');
-
-if (rsvpForm) {
-  rsvpForm.addEventListener('reset', function () {
-    // Timeout to ensure fields are cleared before updating display
-    setTimeout(updateAttendanceFields, 10);
-  });
-}
 });
 
 // Fade out hashtag on scroll
