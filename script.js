@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const containers = document.querySelectorAll('.container');
   const scrollIndicator = document.querySelector('.scroll-indicator');
 
+    // Add no-scroll initially
+  document.body.classList.add('no-scroll');
 
   // Start bouncing the form and venue containers
   containers.forEach(container => {
@@ -15,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     splash.classList.add('fade-out');
     setTimeout(() => {
       splash.style.display = 'none';
+      document.body.classList.remove('no-scroll'); // Remove no-scroll on fade out
     }, 500);
 
     // Scroll to top to reset position

@@ -592,3 +592,8 @@ body::before {
   margin-top: 0.2em;
   margin-bottom: 0;
 }
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
