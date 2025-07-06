@@ -463,7 +463,7 @@ body::before {
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 1fr 2.5em 1fr;
+  grid-template-columns: minmax(0, 1fr) 2.5em minmax(0, 1fr);
   align-items: center;
   min-height: 200px;
   position: relative;
@@ -556,7 +556,7 @@ body::before {
 
 .timeline-item h2 {
   font-family: 'Great Vibes', cursive;
-  font-size: 1.9em;
+  font-size: clamp(1.8em, 3vw, 2.1em);
   color: #d96b6b;
   margin-bottom: 0.2em;
 }
@@ -566,7 +566,7 @@ body::before {
   white-space: normal;
   color: #555;
   text-align: inherit;
-  font-size: 1.0em;
+  font-size: clamp(1.0em, 2.5vw, 1.15em);
   word-break: keep-all;
   line-height: 1.3;
 }
