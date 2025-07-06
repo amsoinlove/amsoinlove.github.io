@@ -58,6 +58,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 4000);
 });
 
+// Fade out hashtag on scroll
+const hashtag = document.querySelector('.hero .hashtag');
+if (hashtag) {
+  window.addEventListener('scroll', () => {
+    const fadeStart = 40;
+    const fadeEnd = 160;
+    const scrollY = window.scrollY || window.pageYOffset;
+    let opacity = 1;
+    if (scrollY > fadeStart) {
+      opacity = Math.max(0, 1 - (scrollY - fadeStart) / (fadeEnd - fadeStart));
+    }
+    hashtag.style.opacity = opacity;
+  });
+}
+
 // Pause music if tab is hidden
 document.addEventListener('visibilitychange', () => {
   const music = document.getElementById('bgMusic');
