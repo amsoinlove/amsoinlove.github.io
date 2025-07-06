@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     splash.classList.add('fade-out');
     setTimeout(() => {
       splash.style.display = 'none';
-      document.body.classList.remove('no-scroll'); // Remove no-scroll on fade out
+        document.body.classList.remove('no-scroll'); // Remove no-scroll on fade out
     }, 500);
 
     // Scroll to top to reset position
@@ -59,6 +59,41 @@ document.addEventListener('DOMContentLoaded', () => {
     currentSlide = (currentSlide + 1) % slides.length;
     slides[currentSlide].classList.add('active');
   }, 4000);
+
+    // RSVP attendance dynamic show/hide fields
+  const yesRadio = document.getElementById('attending-yes');
+  const noRadio = document.getElementById('attending-no');
+  const attendanceDetails = document.getElementById('attendance-details');
+  const arrival = document.getElementById('arrival-date');
+  const guest = document.getElementById('guest-count');
+
+  function updateAttendanceFields() {
+    if (noRadio && noRadio.checked) {
+      attendanceDetails.classList.add('hide');
+      arrival.required = false;
+      guest.required = false;
+    } else {
+      attendanceDetails.classList.remove('hide');
+      arrival.required = true;
+      guest.required = true;
+    }
+  }
+
+  if (yesRadio && noRadio) {
+    yesRadio.addEventListener('change', updateAttendanceFields);
+    noRadio.addEventListener('change', updateAttendanceFields);
+    // Initialize on page load
+    updateAttendanceFields();
+  }
+
+  const rsvpForm = document.getElementById('rsvp-form');
+
+if (rsvpForm) {
+  rsvpForm.addEventListener('reset', function () {
+    // Timeout to ensure fields are cleared before updating display
+    setTimeout(updateAttendanceFields, 10);
+  });
+}
 });
 
 // Fade out hashtag on scroll

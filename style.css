@@ -150,6 +150,20 @@ input[type="radio"]:focus + .heart {
   box-shadow: none;
 }
 
+#attendance-details {
+  max-height: 500px;           /* Enough to fit content */
+  opacity: 1;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+  will-change: max-height, opacity;
+}
+
+#attendance-details.hide {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
 input#attending-yes:checked + label.heart::before {
   color: #e0667d;
 }
@@ -356,11 +370,19 @@ body::before {
 }
 
 .scroll-text {
+  display: inline-block;
+  background: rgba(255,255,255,0.96);    /* Soft white bubble */
+  color: #d96b6b;                        /* Match your theme */
+  padding: 0.1em 1.0em;
+  border-radius: 1em;                     /* Fully rounded */
+  border: 2px solid #ffd2d2;
+  box-shadow: 0 4px 18px rgba(217,107,107,0.14);
   font-family: "Zain", sans-serif;
-  font-weight: 200;
-  font-size: 1.3em;
-  color: #ffffff;
+  font-weight: 600;
+  font-size: clamp(1.05em, 2.6vw, 1.3em);
+  margin-bottom: -0.5em;
   animation: subtleBounce 1.6s ease-in-out infinite;
+  transition: background 0.2s, color 0.2s;
 }
 
 .scroll-indicator img {
@@ -425,6 +447,13 @@ body::before {
 }
 
 .itinerary-date {
+  text-align: center;
+  color: #d96b6b;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+
+.itinerary-scroll-message {
   text-align: center;
   color: #d96b6b;
   font-weight: bold;

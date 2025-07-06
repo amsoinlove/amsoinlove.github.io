@@ -41,7 +41,10 @@
   <div class="container">
     <h1>Sonali & Amar</h1>
     <p>You're invited to our wedding! 💍 Please let us know if you can join us.</p>
-    <form action="https://formspree.io/f/xrbkvjyo" method="POST">
+    <form id="rsvp-form"
+      action="https://formspree.io/f/xrbkvjyo"
+      method="POST"
+      onsubmit="this.reset(); window.alert('Thank you for your RSVP!'); return false;">
       <label for="name">Full Name <span class="required">*</span></label>
       <input type="text" id="name" name="name" required />
 
@@ -63,32 +66,35 @@
         </div>
       </div>
 
-      <label for="arrival-date">When will you arrive? <span class="required">*</span></label>
-      <select id="arrival-date" name="arrivalDate" required>
-        <option value="" disabled selected>-- Select a date --</option>
-        <option value="October 31st">October 31st</option>
-        <option value="November 1st (before Haldi)">November 1st (before Haldi)</option>
-        <option value="November 1st (before Sangeet)">November 1st (before Sangeet)</option>
-        <option value="Novenber 2nd">November 2nd</option>
-      </select>
+      <div id="attendance-details">
+        <label for="arrival-date">When will you arrive? <span class="required">*</span></label>
+        <select id="arrival-date" name="arrivalDate" required>
+          <option value="" disabled selected>-- Select a date --</option>
+          <option value="October 31st">October 31st</option>
+          <option value="November 1st (before Haldi)">November 1st (before Haldi)</option>
+          <option value="November 1st (before Sangeet)">November 1st (before Sangeet)</option>
+          <option value="Novenber 2nd">November 2nd</option>
+        </select>
 
-      <label for="message">Number of guests attending? <span class="required">*</span></label>
-      <select id="guest-count" name="guestCount" required>
-        <option value="" disabled selected>-- Select guest count --</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4+">4+</option>
-      </select>
+        <label for="message">Number of guests attending? <span class="required">*</span></label>
+        <select id="guest-count" name="guestCount" required>
+          <option value="" disabled selected>-- Select guest count --</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4+">4+</option>
+        </select>
+      </div>
 
       <button type="submit">Send RSVP</button>
     </form>
+    <p class="itinerary-scroll-message"><br>⬇️ Itinerary details below ⬇️</p>
   </div>
 
   <!-- Itinerary Section -->
   <div class="container" id="itinerary">
     <h1>Wedding Itinerary</h1>
-    <p class="itinerary-date">Frid, 31st Oct 2025 - Sun, 2nd Nov 2025</p>
+    <p class="itinerary-date">Fri, 31st Oct 2025 - Sun, 2nd Nov 2025</p>
     <div class="timeline">
       <div class="bottom-node"></div>
         <div class="timeline-item left">
