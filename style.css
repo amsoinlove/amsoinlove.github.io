@@ -135,7 +135,7 @@ audio {
 }
 
 .heart-caption {
-  font-size: clamp(0.85em, 2vw, 1.1em);
+  font-size: clamp(0.88em, 2vw, 1.1em);
   margin-top: 0.4em;
   color: #555;
 }
