@@ -42,13 +42,13 @@
     <h1>Sonali & Amar</h1>
     <p>You're invited to our wedding! 💍 Please let us know if you can join us.</p>
     <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-      <label for="name">Full Name</label>
+      <label for="name">Full Name <span class="required">*</span></label>
       <input type="text" id="name" name="name" required />
 
       <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required />
+      <input type="email" id="email" name="email"/>
 
-      <label>Will you attend?</label>
+      <label>Will you attend? <span class="required">*</span></label>
       <div class="heart-selection">
         <div class="heart-option">
           <input type="radio" name="attending" id="attending-yes" value="Yes" checked>
@@ -59,21 +59,27 @@
         <div class="heart-option">
           <input type="radio" name="attending" id="attending-no" value="No">
           <label for="attending-no" class="heart"></label>
-          <div class="heart-caption">Can’t make it 😢</div>
+          <div class="heart-caption">Can’t make it 😞</div>
         </div>
       </div>
 
-      <label for="arrival-date">When will you arrive?</label>
+      <label for="arrival-date">When will you arrive? <span class="required">*</span></label>
       <select id="arrival-date" name="arrivalDate" required>
-        <option value="">-- Select a date --</option>
-        <option value="October 31st">May 31</option>
-        <option value="November 1st (before Haldi)">June 1</option>
-        <option value="November 1st (before Sangeet)">June 1</option>
-        <option value="Novenber 2nd">June 2</option>
+        <option value="" disabled selected>-- Select a date --</option>
+        <option value="October 31st">October 31st</option>
+        <option value="November 1st (before Haldi)">November 1st (before Haldi)</option>
+        <option value="November 1st (before Sangeet)">November 1st (before Sangeet)</option>
+        <option value="Novenber 2nd">November 2nd</option>
       </select>
 
-      <label for="message">Any message or dietary preferences?</label>
-      <textarea id="message" name="message" rows="4"></textarea>
+      <label for="message">Number of guests attending? <span class="required">*</span></label>
+      <select id="guest-count" name="guestCount" required>
+        <option value="" disabled selected>-- Select guest count --</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4+">4+</option>
+      </select>
 
       <button type="submit">Send RSVP</button>
     </form>
@@ -88,7 +94,7 @@
         <div class="timeline-item left">
           <div class="content">
             <h2>Mehendi</h2>
-            <p>31st October<br>6:00 PM<br>Outdoor Restaurant</p>
+            <p>31st October<br>6:00 PM<br>Outdoor Lawn</p>
           </div>
           <div class="icon"><img src="photos/mehendi.png" alt="Mehendi"></div>
         </div>
@@ -104,25 +110,33 @@
         <div class="timeline-item left">
           <div class="content">
             <h2>Sangeet & Cocktail</h2>
-            <p>1st November<br>7:00 PM<br>Outdoor Lawn</p>
+            <p>1st November<br>6:00 PM<br>Outdoor Lawn</p>
           </div>
           <div class="icon"><img src="photos/sangeet.png" alt="Sangeet"></div>
         </div>
 
         <div class="timeline-item right">
-          <div class="icon"><img src="photos/wedding.png" alt="Wedding"></div>
+          <div class="icon"><img src="photos/baraat.png" alt="Baraat"></div>
           <div class="content">
-            <h2>Wedding</h2>
-            <p>2nd November<br>12:00 PM<br>Riverside</p>
+            <h2>Baraat</h2>
+            <p>2nd November<br>12:00 PM<br>Main Entrance</p>
           </div>
         </div>
 
         <div class="timeline-item left">
           <div class="content">
-            <h2>Lavan Phere</h2>
-            <p>2nd November<br>4:00 PM<br>Riverside</p>
+            <h2>Varmala</h2>
+            <p>2nd November<br>2:00 PM<br>Riverside Lawn</p>
           </div>
+          <div class="icon"><img src="photos/varmala.png" alt="Varmala"></div>
+        </div>
+
+        <div class="timeline-item right">
           <div class="icon"><img src="photos/phere.png" alt="Lavan Phere"></div>
+          <div class="content">
+            <h2>Lavan Phere</h2>
+            <p>2nd November<br>6:00 PM<br>Riverside Lawn</p>
+          </div>
         </div>
       </div>
     </div>
@@ -131,17 +145,20 @@
   <!-- Venue Section -->
   <div class="container" id="venue">
     <h1>Venue</h1>
+    <img src="photos/resort.png" alt="Wood Castle Resort" class="venue-photo">
     <p>Join us at the beautiful <strong>Wood Castle Spa & Resort</strong>, nestled in the scenic hills of Jim Corbett for a celebration full of love and laughter.</p>
 
     <!-- Pin and Directions -->
     <div class="venue-details">
-      📍 <strong>Wood Castle Spa & Resort</strong><br/>
+      <h2 style="margin-bottom: 0em;">📍<a href="https://www.woodcastle.co/" target="_blank" class="map-link">
+        <strong>Wood Castle Spa & Resort</strong>
+      </a></h2>
+      <br/>
       <a href="https://maps.app.goo.gl/h7FvZXuypj874zqo6" target="_blank" class="map-link">
         Open in Google Maps →
       </a>
     </div>
 
-    <!-- Embedded Map -->
     <div class="map-container">
       <iframe
         width="100%"
@@ -153,9 +170,6 @@
         loading="lazy">
       </iframe>
     </div>
-  </div>
-
-
 
   <!-- Background Music -->
   <audio autoplay loop id="bgMusic" volume="0.2">
