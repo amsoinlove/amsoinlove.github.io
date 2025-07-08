@@ -66,16 +66,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const attendanceDetails = document.getElementById('attendance-details');
   const arrival = document.getElementById('arrival-date');
   const guest = document.getElementById('guest-count');
+  const cantMakeItMsg = document.getElementById('cant-make-it-message');
 
   function updateAttendanceFields() {
     if (noRadio && noRadio.checked) {
       attendanceDetails.classList.add('hide');
       arrival.required = false;
       guest.required = false;
+      if (cantMakeItMsg) cantMakeItMsg.classList.remove('hide');
     } else {
       attendanceDetails.classList.remove('hide');
       arrival.required = true;
       guest.required = true;
+      if (cantMakeItMsg) cantMakeItMsg.classList.add('hide');
     }
   }
 
